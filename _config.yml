@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: zhonghuangzhang@gmail.com
 description: "后端、前端、电影、杂事一二 | 阿樟，JavaWeb，Study Machine，FilmLover | 这里是 @Zhz木章 一壶浊酒两粗手，码下代码喝点酒。"
 keyword: "樟, 阿樟, 小钟, Zhz Blog, hz钟, 阿樟的博客, 博客, 个人网站, 后端, 前端爱好者, 电影发烧友, 开发, Java, Z"
-url: "https://zhonghuanzhang.me"              # your host, for absolute URL
+url: "https://zhzava.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
