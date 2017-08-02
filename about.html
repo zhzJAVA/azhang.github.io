@@ -6,24 +6,24 @@ header-img: "img/about-bg.jpg"
 ---
 
 <!-- Language Selector -->
-<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+<!--<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
     <option value="0" selected> 中文 Chinese </option>
     <option value="1"> 英文 English </option>
 </select>
 
-<!-- Chinese Version -->
+&lt;!&ndash; Chinese Version &ndash;&gt;
 <div class="zh post-container">
     {% capture about_zh %}{% include about/zh.md %}{% endcapture %}
     {{ about_zh | markdownify }}
 </div>
 
-<!-- English Version -->
+&lt;!&ndash; English Version &ndash;&gt;
 <div class="en post-container">
     {% capture about_en %}{% include about/en.md %}{% endcapture %}
     {{ about_en | markdownify }}
 </div>
 
-<!-- Handle Language Change -->
+&lt;!&ndash; Handle Language Change &ndash;&gt;
 <script type="text/javascript">
     // get nodes
     var $zh = document.querySelector(".zh");
@@ -61,7 +61,7 @@ header-img: "img/about-bg.jpg"
 
     // init
     _render();
-</script>
+</script>-->
 
 
 {% if site.disqus_username %}
