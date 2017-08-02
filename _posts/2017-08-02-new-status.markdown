@@ -2,7 +2,7 @@
 layout:     post
 title:      "新姿态 "
 subtitle:   " \"Hello World, Hello Blog\""
-date:       2017-08-02 10:00:00
+date:       2017-08-01 10:00:00
 author:     "Zhz"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
