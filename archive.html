@@ -1,6 +1,42 @@
 ---
-layout: page
+layout: default
 title: "Archive"
 description: "也许，或者，可能，应该"
-header-img: "img/archive-bg"
+header-img: "img/archive-bg.jpg"
 ---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {% for post in site.posts %}
+            {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
+            {% if year != y %}
+            {% assign year = y %}
+            <div class="one-tag-list">
+			  	<span class="fa listing-seperator" id="{{ y }}">
+                    <span class="tag-text">{{ y }}</span>
+                </span>
+            </div>
+            {% endif %}
+            <div class="post-preview">
+                <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
