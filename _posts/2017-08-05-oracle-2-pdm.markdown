@@ -5,10 +5,9 @@ subtitle:   "win10下PowerDesigner逆向生成pdm文件"
 date:       2017-08-05
 author:     "Zhz"
 header-img: ""
-catalog:    true
+catalog:    IDE
 tags:
     - oracle
-    - IDE
 ---
 
 > “写得比较详细，结合自己一步步从小白到新手的艰辛历程，还是觉得教程性的东西应该尽量详细！ ”
