@@ -23,7 +23,7 @@ tags:
 
 <img src="/img/in-post/20170806_fired_rice/02.jpg"/>
 <br>
-强势拗造型。虽然木给你看到。没有人看到- -。自娱自乐。当生活给了你一把掌，你应该反手就是一记丝心萝卜印。
+强势拗造型。
 <img src="/img/in-post/20170806_fired_rice/03.jpg"/>
 
 ###### 肉卷煎煎
