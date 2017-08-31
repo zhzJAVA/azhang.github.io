@@ -50,7 +50,7 @@ cmd下运行mvn -v，显示版本号即表示安装成功
 
 ###### pom.xml
 
-pom作为项目对象模型，通过xml表示maven项目，使用<a href="">pom.xml</a>来实现。
+pom作为项目对象模型，通过xml表示maven项目，使用<a href="/_posts_attach/pom.xml">pom.xml</a>来实现。
 <br>
 主要描述了项目：包括配置文件，开发者需要遵循的规则，缺陷管理系统，组织和licenses，项目的url，项目的依赖性，以及其他所有的项目相关因素
 
