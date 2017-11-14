@@ -179,6 +179,10 @@ select * from user_jobs;
 <br>
        WITH ADMIN OPTION 使用户同样具有分配权限的权利，可将此权限授予别人
 </strong>
+<br>
+查看系统权限
+<br>
+select * from system_privilege_map where name like '%VIEW%' order by name;
 <br><br>
 不同的对象具有不同的对象权限，
        对象的拥有者拥有所有权限，
