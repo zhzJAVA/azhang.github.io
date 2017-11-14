@@ -5,7 +5,7 @@ subtitle:   "win10下PowerDesigner逆向生成pdm文件"
 date:       2017-08-05
 author:     "Zhz"
 header-img: ""
-catalog:    IDE
+catalog:    DATABASE
 tags:
     - oracle
 ---

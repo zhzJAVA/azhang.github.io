@@ -1259,3 +1259,10 @@ img::-moz-selection {
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
 }
+.archive-time{
+  width: 38%;
+  float: left;
+}
+.archive-title{
+  width: 60%;
+}
