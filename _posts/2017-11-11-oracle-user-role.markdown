@@ -36,6 +36,8 @@ select * from user_users;
 select * from user_sys_privs;
 ###### 查看当前用户定时任务
 select * from user_jobs;
+###### 调试Oracle存储过程权限
+grant debug any procedure,debug connect session to username 
 
 
 ### Oracle 表空间、用户、对象权限、系统权限
