@@ -1,0 +1,98 @@
+---
+layout:     post
+title:      "oracle转pdm"
+subtitle:   "win10下PowerDesigner逆向生成pdm文件"
+date:       2017-08-05
+author:     "Zhz"
+header-img: ""
+catalog:    DATABASE
+tags:
+    - oracle
+---
+
+> “写得比较详细，结合自己一步步从小白到新手的艰辛历程，还是觉得教程性的东西应该尽量详细！ ”
+
+
+### 下载安装需要的软件
+
+###### 确定windows系统
+
+确定windows系统32位还是64位，安装对应的oracle位数的客户端和驱动以及PowerDesigner。我的系统是win10 64位
+<img src="/img/in-post/20170805_oracle2pdm/1-1-1.jpg"/>
+
+###### 下载驱动
+
+从oracle官网下载驱动instantclient-basic-windows.x64-12.2.0.1.0.zip 和 instantclient-odbc-windows.x64-12.2.0.1.0.zip
+<br>
+<a href="http://www.oracle.com/technetwork/topics/winx64soft-089540.html">http://www.oracle.com/technetwork/topics/winx64soft-089540.html</a>
+<img src="/img/in-post/20170805_oracle2pdm/1-2-1.jpg"/>
+
+或者从网盘下载（已经解压到同个目录）
+<br>
+链接：<a href="https://pan.baidu.com/s/1pKKsufT">https://pan.baidu.com/s/1pKKsufT</a>
+<br>
+提取密码：gr3y
+
+对应的版本可以根据自己的需求来下载，我用到的服务器数据库是oracle11g，不过我本机装的是最新的客户端和驱动，12.2的！这不会影响使用，oracle驱动应该是高版本兼容低版本。
+
+###### 解压驱动
+
+从官网下载好对应的压缩包后，解压缩这两个文件到同一个文件夹，我的是instantclient_12_2。
+<br>
+如果是数据导入，Oracle是不支持高版本导入到低版本，具体的解决方法可以自行百度和谷歌，网上都有方法。
+
+###### 安装PowerDesigner
+
+由于我的系统是64位的，安装的oracle驱动也是64位的，使用PowerDesigner也必须是64位，否则没有办法加载驱动，64位的powerdesigner16.5下载请看下面：
+<br>
+链接：<a href="http://pan.baidu.com/s/1slwAjSh">http://pan.baidu.com/s/1slwAjSh</a>
+<br>
+提取密码：d4gw
+
+###### 小记
+
+在进行操作之前先确认各软件版本相互对应，这样可以省去不必要的错误，我就是吃了这个亏，多花了很多时间才发现问题是出在版本上。64位驱动对应64位powerDesginer，32位的对应32位的，切记！
+
+### PowerDesigner逆向生成pdm文件
+
+###### 可先在cmd下运行C:\Windows\System32\odbcad32.exe
+
+<img src="/img/in-post/20170805_oracle2pdm/2-1-1.jpg"/>
+<img src="/img/in-post/20170805_oracle2pdm/2-1-2.jpg"/>
+
+这里要说到一点的就是我的系统是win10的，所以系统里同时保留了64位的文件在 
+C:\Windows\System32\  路径下，32位的文件在C:\Windows\SysWOW64\ 下，因此如果你也是win10 64位系统也可以选择安装32位的驱动和32位的powerDesigner
+<img src="/img/in-post/20170805_oracle2pdm/2-1-3.jpg"/>
+<img src="/img/in-post/20170805_oracle2pdm/2-1-4.jpg"/>
+
+###### 添加oracle数据源
+
+<img src="/img/in-post/20170805_oracle2pdm/2-2-1.jpg"/>
+
+###### PowerDesigner操作
+
+以管理员身份打开PowerDesigner，进行下列操作（如已执行了以上2的操作，可以选择跳过此步骤）
+<img src="/img/in-post/20170805_oracle2pdm/2-3-1.jpg"/>
+<img src="/img/in-post/20170805_oracle2pdm/2-3-2.jpg"/>
+<img src="/img/in-post/20170805_oracle2pdm/2-3-3.jpg"/>
+<img src="/img/in-post/20170805_oracle2pdm/2-3-4.jpg"/>
+<img src="/img/in-post/20170805_oracle2pdm/2-3-5.jpg"/>
+<img src="/img/in-post/20170805_oracle2pdm/2-3-6.jpg"/>
+<img src="/img/in-post/20170805_oracle2pdm/2-3-7.jpg"/>
+<img src="/img/in-post/20170805_oracle2pdm/2-3-8.jpg"/>
+<img src="/img/in-post/20170805_oracle2pdm/2-3-9.jpg"/>
+<img src="/img/in-post/20170805_oracle2pdm/2-3-10.jpg"/>
+至此，添加数据源成功。
+
+###### 生成pdm
+
+接下来使用我们刚才添加成功的数据源生成pdm文件
+<img src="/img/in-post/20170805_oracle2pdm/2-4-1.jpg"/>
+接下来根据PowerDesigner默认操作就行了，可以根据需要选择部分的表进行操作。
+
+### 存在的问题
+
+PS：在我的实际操作过程中，还遇到一个很坑的问题，我原本用的PD(PowerDesigner)是32位的，然后一开始我装了64位的驱动，因为我的系统是64位的，导致在PD里面一直没有办法找到相应的驱动。然后我尝试了直接把c盘SysWOW64里面的odbccad32.exe换成了c盘System32的odbccad32.exe，但是要命的是头脑发热把两个目录搞反了，备份的也是32位的odbccad32.exe，然后悲剧的两个odbccad32.exe都变成32的了。后面在其它同事的win10里面拷了一个64位的odbccad32.exe，放到System32里面，但是运行的时候还是弹出了32的窗口
+<img src="/img/in-post/20170805_oracle2pdm/q-1-1.jpg"/>
+无奈之下只能换成个64位的PD。这是找到了Win10的一个bug么，我感到绝望！可能是我懂太少了吧，如果有知道原因的也可以告知我一下[感谢][感谢]！
+---
